@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Rainfall Prediction</title>
+    <style>
+        body {
+            background-image: url("https://wallpaperaccess.com/full/701614.jpg");
+            background-size: cover;
+            text-align: center;
+            color: black;
+            font-family: Arial;
+        }
+        .form-box {
+            background-color: rgba(255,255,255,0.8);
+            padding: 20px;
+            width: 50%;
+            margin: auto;
+            margin-top: 50px;
+            border-radius: 10px;
+        }
+        input, select {
+            margin: 5px;
+            padding: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-box">
+        <h1>Rainfall Prediction</h1>
+
+        <form action="{{ url_for('predict') }}" method="post">
+
+            <label>Location:</label>
+            <select name="Location">
+                <option>Albury</option>
+                <option>Sydney</option>
+                <option>Melbourne</option>
+                <option>Perth</option>
+            </select><br>
+
+            <input type="text" name="MinTemp" placeholder="Min Temp" required>
+            <input type="text" name="MaxTemp" placeholder="Max Temp" required>
+            <input type="text" name="Rainfall" placeholder="Rainfall" required>
+            <input type="text" name="Humidity9am" placeholder="Humidity 9am" required>
+            <input type="text" name="Humidity3pm" placeholder="Humidity 3pm" required>
+            <input type="text" name="Pressure9am" placeholder="Pressure 9am" required>
+            <input type="text" name="Pressure3pm" placeholder="Pressure 3pm" required>
+
+            <br><br>
+            <button type="submit">Predict</button>
+
+        </form>
+    </div>
+
+</body>
+</html>
